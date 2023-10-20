@@ -1,8 +1,18 @@
-const Auth = () => {
-    const onSubmit = ()=>{};
+import axios from "axios";
+
+
+const Auth = (props) => {
+  const onSubmit = (e) => {
+    e.preventDefault()
+    const {value} = e.target[0];
+    // console.log(value);
+    axios.post(`${import.meta.env.VITE_API_URL}/auth`,{ username: value})
+    .then((r) => props.onAuth({...r.data, secret:value}))
+    .catch((e) =>console.log("Erro de Autorização", e));
+  };
   return (
     <div className="background">
-      <form onSubmit={} className="form-card">
+      <form onSubmit={onSubmit} className="form-card">
         <div className="form-title">Bem-Vindo!!</div>
         <div className="form-subTitle">
           Informe o nome de usuário para continuar

@@ -13,12 +13,8 @@ body{
     rgb(20,23,33) 50%,
     rgba(20,23,33,0.8) 100%
   );
-  /* display: table-cell;
-  vertical-align: middle; */
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .form-title{
@@ -88,4 +84,12 @@ body{
 
 .auth-button:hover{
   filter: brightness(145%);
+}
+
+chat-wrapper{
+  height: 80vh;
+  width: 80%;
+  margin-left: 10%;
+  color: white;
+  background: rgb(43, 47, 60);
 }
